@@ -1,0 +1,35 @@
+._2zSgNI0PuygwvrxCmlpfcU {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-start; }
+
+._2LeDk6PIR4oZjbohHTT1xV {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  ._2LeDk6PIR4oZjbohHTT1xV li {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+    line-height: 30px;
+    color: #333;
+    cursor: pointer; }
+    ._2LeDk6PIR4oZjbohHTT1xV li:first-of-type, ._2LeDk6PIR4oZjbohHTT1xV li:last-of-type {
+      width: auto;
+      padding: 0 5px; }
+    ._2LeDk6PIR4oZjbohHTT1xV li:first-of-type, ._2LeDk6PIR4oZjbohHTT1xV li:last-of-type {
+      margin-right: 10px;
+      margin-left: 10px; }
+    ._2LeDk6PIR4oZjbohHTT1xV li::selection {
+      background-color: transparent; }
+
+._2zqvbBEs0BGOn9c8F4b4tE {
+  color: #fff !important;
+  background: #54b0bd;
+  border-color: #54b0bd !important; }
+
+
+/*# sourceMappingURL=styles.chunk.css.map*/
