@@ -7,6 +7,8 @@ export default class Pagination extends Component{
 
         this.state = {
             pageCurr:1,
+            groupCount:7,
+            startPage:1,
         }
     }
 
@@ -17,6 +19,8 @@ export default class Pagination extends Component{
 
         const {
             pageCurr,
+            startPage,
+            groupCount,
         } = this.state
 
         let pages = []
@@ -28,14 +32,9 @@ export default class Pagination extends Component{
             pages.push(<li onClick = { this.goNext.bind(this) } className = { this.state.pageCurr === totalPage ? style.nomore:"" } key = {totalPage + 1}>下一页</li>)
         } else {
             pages.push(<li className = { this.state.pageCurr === 1? style.nomore:"" } key={ 0 } onClick = { this.goPrev.bind(this) }>上一页</li>)
-            for(let i = 1;i <= 7;i ++){
+            for(let i = startPage;i < groupCount + startPage;i ++){
                 pages.push(<li className = { this.state.pageCurr === i? style.active:""} key={i} onClick = { this.go.bind(this,i) }>{i}</li>)
             }
-
-            pages.push(<li className = { style.ellipsis } key={ -1 }>···</li>)
-
-            pages.push(<li className = { this.state.pageCurr === totalPage -1 ? style.active:""} key={ totalPage - 1 } onClick = { this.go.bind(this,totalPage - 1) }>{ totalPage -1 }</li>)
-            pages.push(<li className = { this.state.pageCurr === totalPage ? style.active:""} key={ totalPage } onClick = { this.go.bind(this,totalPage) }>{ totalPage }</li>)
 
             pages.push(<li className = { this.state.pageCurr === totalPage ? style.nomore:"" } key={ totalPage + 1 } onClick = { this.goNext.bind(this) }>下一页</li>)
         }
@@ -43,9 +42,28 @@ export default class Pagination extends Component{
     }
 
     go(pageCurr){
+        const {
+            groupCount
+        } = this.state;
+
+
+        if(pageCurr % groupCount === 1){
+            this.setState({
+                startPage:pageCurr
+            })
+        }
+
+
+        if(pageCurr % groupCount === 0){
+            this.setState({
+                startPage:pageCurr - groupCount + 1
+            })
+        }
+
         this.setState({
             pageCurr
-        })
+        });
+
     }
 
     goPrev(){
