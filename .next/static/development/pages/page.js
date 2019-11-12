@@ -1,5 +1,209 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\page.js"],{
 
+/***/ "./components/pagination/pagination.js":
+/*!*********************************************!*\
+  !*** ./components/pagination/pagination.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Pagination; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _pagination_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pagination.scss */ "./components/pagination/pagination.scss");
+/* harmony import */ var _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_pagination_scss__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\zamplus\\project\\react-blog-starter\\components\\pagination\\pagination.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
+
+
+var Pagination =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Pagination, _Component);
+
+  function Pagination(props) {
+    var _this;
+
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Pagination);
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Pagination).call(this, props));
+    _this.state = {
+      pageCurr: 1
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Pagination, [{
+    key: "create",
+    value: function create() {
+      var totalPage = this.props.config.totalPage;
+      var pageCurr = this.state.pageCurr;
+      var pages = [];
+
+      if (totalPage <= 10) {
+        pages.push(__jsx("li", {
+          onClick: this.goPrev.bind(this),
+          className: this.state.pageCurr === 1 ? _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default.a.nomore : "",
+          key: 0,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          },
+          __self: this
+        }, "\u4E0A\u4E00\u9875"));
+
+        for (var i = 1; i <= totalPage; i++) {
+          pages.push(__jsx("li", {
+            onClick: this.go.bind(this, i),
+            className: pageCurr === i ? _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default.a.active : "",
+            key: i,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 26
+            },
+            __self: this
+          }, i));
+        }
+
+        pages.push(__jsx("li", {
+          onClick: this.goNext.bind(this),
+          className: this.state.pageCurr === totalPage ? _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default.a.nomore : "",
+          key: totalPage + 1,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28
+          },
+          __self: this
+        }, "\u4E0B\u4E00\u9875"));
+      } else {
+        pages.push(__jsx("li", {
+          className: this.state.pageCurr === 1 ? _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default.a.nomore : "",
+          key: 0,
+          onClick: this.goPrev.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 30
+          },
+          __self: this
+        }, "\u4E0A\u4E00\u9875"));
+
+        for (var _i = 1; _i <= 7; _i++) {
+          pages.push(__jsx("li", {
+            className: this.state.pageCurr === _i ? _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default.a.active : "",
+            key: _i,
+            onClick: this.go.bind(this, _i),
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 32
+            },
+            __self: this
+          }, _i));
+        }
+
+        pages.push(__jsx("li", {
+          className: _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default.a.ellipsis,
+          key: -1,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35
+          },
+          __self: this
+        }, "\xB7\xB7\xB7"));
+        pages.push(__jsx("li", {
+          className: this.state.pageCurr === totalPage - 1 ? _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default.a.active : "",
+          key: totalPage - 1,
+          onClick: this.go.bind(this, totalPage - 1),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37
+          },
+          __self: this
+        }, totalPage - 1));
+        pages.push(__jsx("li", {
+          className: this.state.pageCurr === totalPage ? _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default.a.active : "",
+          key: totalPage,
+          onClick: this.go.bind(this, totalPage),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38
+          },
+          __self: this
+        }, totalPage));
+        pages.push(__jsx("li", {
+          className: this.state.pageCurr === totalPage ? _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default.a.nomore : "",
+          key: totalPage + 1,
+          onClick: this.goNext.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40
+          },
+          __self: this
+        }, "\u4E0B\u4E00\u9875"));
+      }
+
+      return pages;
+    }
+  }, {
+    key: "go",
+    value: function go(pageCurr) {
+      this.setState({
+        pageCurr: pageCurr
+      });
+    }
+  }, {
+    key: "goPrev",
+    value: function goPrev() {
+      var pageCurr = this.state.pageCurr;
+      this.go(--pageCurr);
+    }
+  }, {
+    key: "goNext",
+    value: function goNext() {
+      var pageCurr = this.state.pageCurr;
+      this.go(++pageCurr);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var Pages = this.create.bind(this)();
+      return __jsx("div", {
+        className: _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default.a.main,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        },
+        __self: this
+      }, __jsx("ul", {
+        className: _pagination_scss__WEBPACK_IMPORTED_MODULE_6___default.a.page,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
+        },
+        __self: this
+      }, Pages));
+    }
+  }]);
+
+  return Pagination;
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/create.js ***!
@@ -2099,10 +2303,10 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpage&absolutePagePath=C%3A%5CUsers%5Czamplus%5Cproject%5Cblog%5Cpages%5Cpage.js!./":
-/*!**************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpage&absolutePagePath=C%3A%5CUsers%5Czamplus%5Cproject%5Cblog%5Cpages%5Cpage.js ***!
-  \**************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpage&absolutePagePath=C%3A%5CUsers%5Czamplus%5Cproject%5Creact-blog-starter%5Cpages%5Cpage.js!./":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpage&absolutePagePath=C%3A%5CUsers%5Czamplus%5Cproject%5Creact-blog-starter%5Cpages%5Cpage.js ***!
+  \****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2142,7 +2346,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_ea92a4d9664833a26066
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Pagination; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Page; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
@@ -2150,63 +2354,65 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_pagination_pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/pagination/pagination */ "./components/pagination/pagination.js");
 
 
 
 
 
-var _jsxFileName = "C:\\Users\\zamplus\\project\\blog\\pages\\page.js";
+var _jsxFileName = "C:\\Users\\zamplus\\project\\react-blog-starter\\pages\\page.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
-var Pagination =
+
+var Page =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Pagination, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Page, _Component);
 
-  function Pagination(props) {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Pagination);
+  function Page() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Page);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Pagination).call(this, props));
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Page).apply(this, arguments));
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Pagination, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Page, [{
     key: "render",
     value: function render() {
       return __jsx("article", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 6
         },
         __self: this
-      }, __jsx(Pagination, {
+      }, __jsx(_components_pagination_pagination__WEBPACK_IMPORTED_MODULE_6__["default"], {
         config: {
-          totalPage: 10
+          totalPage: 27
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 7
         },
         __self: this
       }));
     }
   }]);
 
-  return Pagination;
+  return Page;
 }(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
 
 
 
 /***/ }),
 
-/***/ 1:
-/*!******************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fpage&absolutePagePath=C%3A%5CUsers%5Czamplus%5Cproject%5Cblog%5Cpages%5Cpage.js ***!
-  \******************************************************************************************************************************/
+/***/ 0:
+/*!********************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fpage&absolutePagePath=C%3A%5CUsers%5Czamplus%5Cproject%5Creact-blog-starter%5Cpages%5Cpage.js ***!
+  \********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fpage&absolutePagePath=C%3A%5CUsers%5Czamplus%5Cproject%5Cblog%5Cpages%5Cpage.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpage&absolutePagePath=C%3A%5CUsers%5Czamplus%5Cproject%5Cblog%5Cpages%5Cpage.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fpage&absolutePagePath=C%3A%5CUsers%5Czamplus%5Cproject%5Creact-blog-starter%5Cpages%5Cpage.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fpage&absolutePagePath=C%3A%5CUsers%5Czamplus%5Cproject%5Creact-blog-starter%5Cpages%5Cpage.js!./");
 
 
 /***/ }),
@@ -2222,5 +2428,5 @@ module.exports = dll_ea92a4d9664833a26066;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=page.js.map

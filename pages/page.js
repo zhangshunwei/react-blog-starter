@@ -1,11 +1,11 @@
 import React,{ Component } from "react"
-import Pagination from '../components/pagination'
-export default class Pagination extends Component{
+import Pagination from '../components/pagination/pagination'
+export default class Page extends Component{
     render(){
         return(
             <article>
                 <Pagination config = {{
-                    totalPage:10,
+                    totalPage:27,
                 }}></Pagination>
             </article>
         );
